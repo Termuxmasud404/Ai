@@ -55,6 +55,12 @@
       margin-bottom: 10px;
     }
 
+    .logo img {
+      width: 150px;  /* Adjust this size as per your logo size */
+      height: auto;
+      border-radius: 10px;
+    }
+
     p {
       font-size: 18px;
       margin-bottom: 30px;
@@ -130,7 +136,11 @@
   </div>
 
   <div id="main-content">
-    <div class="logo">The Dream Chaser</div>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="path_to_your_logo_image.png" alt="The Dream Chaser Logo">
+    </div>
+    
     <p>Describe anything and see the magic! AI will generate the image for you.</p>
 
     <iframe
@@ -153,10 +163,11 @@
 
   <script>
     window.addEventListener("load", function () {
+      // Hide the loader and display the main content after everything is loaded
       document.getElementById("loader").style.display = "none";
       document.getElementById("main-content").style.display = "block";
     });
   </script>
 
 </body>
-        </html>
+</html>
