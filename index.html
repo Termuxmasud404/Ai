@@ -31,7 +31,16 @@
     }
     select, button {
       margin: 10px;
-      padding: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #0056b3;
     }
     .footer {
       margin-top: 30px;
@@ -47,12 +56,26 @@
 <body>  <h1>The Dream Chaser - Image Filter by Masud Rana</h1>  <!-- Background music -->  <audio autoplay loop hidden>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
-  </audio><input type="file" id="upload" accept="image/*"><br> <select id="filter"> <option value="none">None</option> <option value="grayscale(100%)">Grayscale</option> <option value="sepia(100%)">Sepia</option> <option value="blur(4px)">Blur</option> <option value="brightness(150%)">Brightness</option> <option value="contrast(200%)">Contrast</option> </select> <button onclick="applyFilter()">Apply Filter</button> <button onclick="downloadImage()">Download Image</button> <br> <canvas id="canvas"></canvas>
+  </audio><input type="file" id="upload" accept="image/*"><br>
 
-  <div class="footer">
-    Powered by Masud Rana <br>
-    <a href="https://www.facebook.com/profile.php?id=100078423821878" target="_blank">Visit my Facebook</a><br>
-    <img src="https://i.ibb.co/fMSBRzL/masud-rana.jpg" alt="Masud Logo" class="logo">
+  <select id="filter">
+    <option value="none">None</option>
+    <option value="grayscale(100%)">Grayscale</option>
+    <option value="sepia(100%)">Sepia</option>
+    <option value="blur(4px)">Blur</option>
+    <option value="brightness(150%)">Brightness</option>
+    <option value="contrast(200%)">Contrast</option>
+    <option value="invert(100%)">Invert</option>
+    <option value="hue-rotate(90deg)">Hue Rotate</option>
+    <option value="saturate(300%)">Saturate</option>
+    <option value="opacity(50%)">Opacity</option>
+  </select>  <br>
+  <button onclick="applyFilter()">Apply Filter</button>
+  <button onclick="downloadImage()">Download Image</button>
+  <button onclick="window.open('https://www.facebook.com/profile.php?id=100078423821878', '_blank')">Visit My Facebook</button>  <br>
+  <canvas id="canvas"></canvas>  <div class="footer">
+    Developer by Masud Rana <br>
+    <img src="masud-logo.png" alt="Masud Logo" class="logo">
   </div>  <script>
     const upload = document.getElementById('upload');
     const canvas = document.getElementById('canvas');
