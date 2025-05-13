@@ -11,15 +11,22 @@
       background: linear-gradient(45deg, #ffcccc, #ccffff);
     }
     h1 {
-      font-size: 2em;
-      animation: colorChange 3s infinite;
+      font-size: 3em;
+      font-weight: bold;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      background: linear-gradient(to right, #ff4b2b, #ff416c, #ff6a00, #00b09b, #00f2fe);
+      color: white;
+      animation: rainbowText 5s linear infinite;
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    @keyframes colorChange {
-      0% { color: red; }
-      25% { color: orange; }
-      50% { color: green; }
-      75% { color: blue; }
-      100% { color: purple; }
+    @keyframes rainbowText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     input[type="file"] {
       margin: 10px;
@@ -51,6 +58,18 @@
       border-radius: 50%;
       margin-top: 10px;
     }
+    .masud-blink {
+      animation: blinkColors 2s infinite;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    @keyframes blinkColors {
+      0% { color: red; }
+      25% { color: orange; }
+      50% { color: lime; }
+      75% { color: blue; }
+      100% { color: violet; }
+    }
   </style>
 </head>
 <body>  <h1>The Dream Chaser - Image Filter by Masud Rana</h1>  <!-- Background music -->  <audio autoplay loop hidden>
@@ -73,8 +92,7 @@
   <button onclick="applyFilter()">Apply Filter</button>
   <button onclick="downloadImage()">Download Image</button>  <br>
   <canvas id="canvas"></canvas>  <div class="footer">
-    Developer by Masud Rana <br>
-    <img src="masud-logo.png" alt="Masud Logo" class="logo"><br>
+    <span class="masud-blink">Developer By Masud Rana (Masud Rana)</span> <br>
     <button onclick="window.open('https://www.facebook.com/profile.php?id=100078423821878', '_blank')">Visit My Facebook</button>
   </div>  <script>
     const upload = document.getElementById('upload');
